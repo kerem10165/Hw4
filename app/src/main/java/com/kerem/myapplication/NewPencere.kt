@@ -32,8 +32,8 @@ class NewPencere : AppCompatActivity() {
         add_db.setVisibility(View.INVISIBLE)
 
 
-        //try
-        //{
+        try
+        {
             val database = this.openOrCreateDatabase("Odev" , Context.MODE_PRIVATE, null);
             database.execSQL("CREATE TABLE IF NOT EXISTS  Ders_odev (key VARCHAR UNIQUE , value VARCHAR)")
             //database.execSQL("INSERT INTO Ders_odev (key,value) VALUES ('bil359' , 'Hello World from database')")
@@ -52,11 +52,10 @@ class NewPencere : AppCompatActivity() {
             if(flag == false)
                 add_key_value(text , database)
             cursor.close()
-        //}
-        /*catch (e : Exception){
+        }
+        catch (e : Exception){
             e.printStackTrace()
-
-        }*/
+        }
     }
 
     fun add_key_value(text : String , database : SQLiteDatabase)
